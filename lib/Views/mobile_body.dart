@@ -16,11 +16,14 @@ class MobileScaffold extends StatefulWidget {
 }
 
 class _MobileScaffoldState extends State<MobileScaffold> {
+  final GlobalKey<ScaffoldState> scaffoldkey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: defaultBackgroundColor,
+        key: scaffoldkey,
         appBar: AppBar(
           // backgrounduColor: appBarColor,
           title: Text('Untitled Document'),
@@ -73,7 +76,12 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         Spacer(),
-                        ImageIcon(AssetImage("assets/images/drawer.png"))
+                        GestureDetector(
+                            onTap: () {
+                              scaffoldkey.currentState!.closeDrawer();
+                            },
+                            child: ImageIcon(
+                                AssetImage("assets/images/drawer.png"))),
                       ],
                     ),
                   ),
