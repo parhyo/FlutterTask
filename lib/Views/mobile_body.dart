@@ -42,7 +42,103 @@ class _MobileScaffoldState extends State<MobileScaffold> {
             SizedBox(width: 10),
           ],
         ),
-        drawer: myDrawer,
+        drawer: Drawer(
+            shape: RoundedRectangleBorder(),
+            backgroundColor: Color(0xffF2F5F8),
+            elevation: 0,
+            child: SafeArea(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                      // top: 10,
+                      right: 10,
+                      // left:
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 40,
+                          width: 40,
+                          margin: EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                              border: Border.all(color: Colors.black)),
+                        ),
+                        SizedBox(width: 10),
+                        Text(
+                          "Full Name",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Spacer(),
+                        ImageIcon(AssetImage("assets/images/drawer.png"))
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Container(
+                      height: 40,
+                      color: Colors.white,
+                      child: TextFormField(
+                        cursorHeight: 20,
+                        decoration: InputDecoration(
+                            contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                            isDense: true,
+                            prefixIconConstraints: BoxConstraints(
+                                maxHeight: 80,
+                                maxWidth: 80,
+                                minHeight: 25,
+                                minWidth: 25),
+                            prefixIcon: Padding(
+                              padding:
+                                  const EdgeInsets.only(right: 10, left: 10),
+                              child: ImageIcon(
+                                AssetImage(
+                                  "assets/images/search.png",
+                                ),
+                                // size: 18,
+                              ),
+                            ),
+                            border: OutlineInputBorder(),
+                            hintText: "Search BEBA Scribe"),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 13,
+                          foregroundColor: Colors.white,
+                          backgroundColor: Colors.black,
+                          child: Icon(
+                            Icons.add,
+                            size: 14,
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        Text(
+                          "Create a New...",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 10, top: 30),
+                    child: Text(
+                      "All Your Work",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                  ),
+                ],
+              ),
+            )),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
@@ -100,6 +196,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
           insetPadding: EdgeInsets.all(0),
           content: SingleChildScrollView(
             child: Container(
+              height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               // height: double.infinity,
               child: Padding(
@@ -108,31 +205,13 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // first half of page
-                    (isDrawer)
-                        ? Container()
-                        : GestureDetector(
-                            onTap: () {
-                              log("ADSasf");
-                              setstatte(() {
-                                isDrawer = !isDrawer;
-                              });
-                            },
-                            child: Padding(
-                              child: ImageIcon(
-                                  AssetImage("assets/images/drawer.png")),
-                              padding: EdgeInsets.only(top: 10),
-                            )),
-                    (isDrawer == true)
-                        ? draweeer(
-                            context,
-                            () {
-                              log("ADSasf");
-                              setstatte(() {
-                                isDrawer = !isDrawer;
-                              });
-                            },
-                          )
-                        : Container(),
+                    GestureDetector(
+                        onTap: () {},
+                        child: Padding(
+                          child:
+                              ImageIcon(AssetImage("assets/images/drawer.png")),
+                          padding: EdgeInsets.only(top: 10),
+                        )),
 
                     Expanded(
                       flex: 2,

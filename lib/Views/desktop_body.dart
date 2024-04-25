@@ -169,29 +169,10 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // first half of page
-                (isDrawer)
-                    ? Container()
-                    : GestureDetector(
-                        onTap: () {
-                          log("ADSasf");
-                          setstatte(() {
-                            isDrawer = !isDrawer;
-                          });
-                        },
-                        child:
-                            ImageIcon(AssetImage("assets/images/drawer.png")),
-                      ),
-                (isDrawer == true)
-                    ? draweeer(
-                        context,
-                        () {
-                          log("ADSasf");
-                          setstatte(() {
-                            isDrawer = !isDrawer;
-                          });
-                        },
-                      )
-                    : Container(),
+                GestureDetector(
+                  onTap: () {},
+                  child: ImageIcon(AssetImage("assets/images/drawer.png")),
+                ),
 
                 Expanded(
                   flex: 2,
@@ -349,37 +330,18 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
         titlePadding: EdgeInsets.all(0),
         insetPadding: EdgeInsets.all(0),
         content: Container(
-          width: double.infinity,
-          height: double.infinity,
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // first half of page
-                (isDrawer)
-                    ? Container()
-                    : GestureDetector(
-                        onTap: () {
-                          log("ADSasf");
-                          setstatte(() {
-                            isDrawer = !isDrawer;
-                          });
-                        },
-                        child:
-                            ImageIcon(AssetImage("assets/images/drawer.png")),
-                      ),
-                (isDrawer == true)
-                    ? draweeer(
-                        context,
-                        () {
-                          log("ADSasf");
-                          setstatte(() {
-                            isDrawer = !isDrawer;
-                          });
-                        },
-                      )
-                    : Container(),
+                GestureDetector(
+                  onTap: () {},
+                  child: ImageIcon(AssetImage("assets/images/drawer.png")),
+                ),
 
                 Expanded(
                   flex: 2,
@@ -514,35 +476,6 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
                     ),
                   ),
                 ),
-                // second half of page
-                // Expanded(
-                //   child: Column(
-                //     children: [
-                //       Padding(
-                //         padding: const EdgeInsets.all(8.0),
-                //         child: Container(
-                //           height: 400,
-                //           decoration: BoxDecoration(
-                //             borderRadius: BorderRadius.circular(8),
-                //             color: Colors.grey[400],
-                //           ),
-                //         ),
-                //       ),
-                //       // list of stuff
-                //       Expanded(
-                //         child: Padding(
-                //           padding: const EdgeInsets.all(8.0),
-                //           child: Container(
-                //             decoration: BoxDecoration(
-                //               borderRadius: BorderRadius.circular(8),
-                //               color: Colors.grey[200],
-                //             ),
-                //           ),
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-                // ),
               ],
             ),
           ),

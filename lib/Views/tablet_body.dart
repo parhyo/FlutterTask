@@ -37,9 +37,6 @@ class _TabletScaffoldState extends State<TabletScaffold> {
                         showDialog(
                             context: context,
                             builder: (_) {
-                              var width = MediaQuery.of(context).size.width;
-
-                              log("www $width");
                               return tabletDailog();
                             });
                         // Navigator.push(context,
@@ -86,29 +83,15 @@ class _TabletScaffoldState extends State<TabletScaffold> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // first half of page
-                (isDrawer)
-                    ? Container()
-                    : GestureDetector(
-                        onTap: () {
-                          log("ADSasf");
-                          setstatte(() {
-                            isDrawer = !isDrawer;
-                          });
-                        },
-                        child:
-                            ImageIcon(AssetImage("assets/images/drawer.png")),
-                      ),
-                (isDrawer == true)
-                    ? draweeer(
-                        context,
-                        () {
-                          log("ADSasf");
-                          setstatte(() {
-                            isDrawer = !isDrawer;
-                          });
-                        },
-                      )
-                    : Container(),
+                GestureDetector(
+                  onTap: () {
+                    log("ADSasf");
+                    setstatte(() {
+                      isDrawer = !isDrawer;
+                    });
+                  },
+                  child: ImageIcon(AssetImage("assets/images/drawer.png")),
+                ),
 
                 Expanded(
                   flex: 2,

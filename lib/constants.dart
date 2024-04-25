@@ -40,15 +40,15 @@ var myDrawer = Drawer(
   backgroundColor: Color(0xffF2F5F8),
   elevation: 0,
   child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.only(top: 50),
         child: Row(
           children: [
             Container(
               height: 40,
               width: 40,
+              margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Colors.white,
                   shape: BoxShape.circle,
